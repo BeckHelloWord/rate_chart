@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .c-red {
+            color: red;
+        }
+
+        .rate-chart .chart-border {
+            border-bottom: 1px solid #fff;
+            line-height: 23px;
+            height: 23px;
+        }
+
+        .rate-box {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        .rate-txt {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .reate-current {
+            font-size: 16px;
+        }
+
+        .rate-table {
+            margin-top: 20px;
+        }
+
+        .rate-table td {
+            line-height: 24px;
+            height: 24px;
+        }
+
+        .rate-table .rate-money p {
+            margin-top: -24px;
+            line-height: 24px;
+            height: 24px;
+        }
+
+        .rate-table table {
+            table-layout: fixed;
+            width: 100%;
+            font-size: 12px;
+            border-spacing: 0;
+            text-align: center;
+        }
+
+        .rate-table .rate-table {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .rate-table .rate-money {
+            width: 50px;
+            color: #999;
+        }
+
+        .rate-table .rate-money td {
+            position: relative;
+        }
+
+        .rate-table .rate-money td:after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 2px;
+            height: 2px;
+            background: #000;
+        }
+
+        .rate-table .rate-money tr:last-child td:after {
+            width: 0;
+        }
+
+        .rate-table .rate-list {
+            width: 300px;
+        }
+
+        .rate-table .rate-chart {
+            background: #5D92F2;
+        }
+
+        .rate-table .rate-day {
+            position: relative;
+            text-align: right;
+            color: #999;
+        }
+
+        .rate-table .rate-day p {
+            position: relative;
+            right: -12px;
+        }
+
+        .rate-table .rate-day td {
+            position: relative;
+        }
+
+        .rate-table .rate-day td:after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 2px;
+            height: 2px;
+            background: #000;
+        }
+
+        .rate-table .rate-day td:last-child:after {
+            width: 0;
+        }
+
+        .rate-table .rate-day td:last-child p {
+            right: 0;
+            font-size: 11px;
+        }
+
+        .rate-table .rate-day:after,
+        .rate-table .rate-day:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #000;
+        }
+
+        .rate-table .rate-day:before {
+            top: -1px;
+            left: -1px;
+        }
+
+        .rate-table .rate-day:after {
+            top: -1px;
+            right: 0;
+        }
+
+        .rate-chart .chart-one {
+            background-color: #4779EA;
+        }
+
+        .rate-chart .chart-two {
+            background-color: #3B65DE;
+        }
+
+        .rate-chart .chart-three {
+            background-color: #264DB8;
+        }
+
+        .rate-chart .chart-four {
+            background-color: #2C449E;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rate-box">
+        <p class="rate-txt"><span class="reate-current c-red">6.5</span>&nbsp;&nbsp;%&nbsp;(&nbsp;预计再持有20天,享受历史年利率<span class="reate-history c-red">7.5%</span>&nbsp;)</p>
+        <div class="rate-table clearfix">
+            <div class="rate-money fl">
+                <table>
+                    <tr>
+                        <td>
+                            <p>5000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>5000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>5000</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>5000</p>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>
+                            <p>5000</p>
+                        </td>
+                    </tr> -->
+                </table>
+            </div>
+            <div class="rate-list fr">
+                <table class="rate-chart">
+                    <tr>
+                        <td>1</td>
+                        <td class="chart-one chart-border">1</td>
+                        <td class="chart-two chart-border">1</td>
+                        <td class="chart-three chart-border">1</td>
+                        <!-- <td class="chart-four chart-border">1</td> -->
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="chart-one chart-border">1</td>
+                        <td class="chart-two chart-border">1</td>
+                        <td class="chart-three chart-border">1</td>
+                        <!-- <td class="chart-four chart-border">1</td> -->
+                    </tr>
+                    <!-- <tr>
+                        <td>1</td>
+                        <td class="chart-one chart-border">1</td>
+                        <td class="chart-two chart-border">1</td>
+                        <td class="chart-three chart-border">1</td>
+                        <td class="chart-four chart-border">1</td>
+                    </tr> -->
+                    <tr>
+                        <td colspan="4">1</td>
+                    </tr>
+                </table>
+                <table class="rate-day">
+                    <tr>
+                        <td>
+                            <p>1天</p>
+                        </td>
+                        <td>
+                            <p>1天</p>
+                        </td>
+                        <td>
+                            <p>1天</p>
+                        </td>
+                        <!-- <td>
+                            <p>1天</p>
+                        </td> -->
+                        <td>
+                            <p>(持有天数)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
