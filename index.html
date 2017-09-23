@@ -37,7 +37,7 @@
         }
 
         .rate-box {
-            width: 350px;
+            width: 387px;
             margin: 0 auto;
         }
 
@@ -51,6 +51,7 @@
         }
 
         .rate-table {
+
             margin-top: 20px;
         }
 
@@ -80,7 +81,7 @@
         }
 
         .rate-table .rate-money {
-            width: 50px;
+            width: 62px;
             color: #999;
         }
 
@@ -95,7 +96,7 @@
             right: -1px;
             width: 2px;
             height: 2px;
-            background: #000;
+            background: #c0a049;
         }
 
         .rate-table .rate-money tr:last-child td:after {
@@ -103,11 +104,12 @@
         }
 
         .rate-table .rate-list {
-            width: 300px;
+            width: 325px;
         }
 
         .rate-table .rate-chart {
-            background: #5D92F2;
+            color: #666;
+            background: #fdf2b9;
         }
 
         .rate-table .rate-day {
@@ -132,7 +134,7 @@
             right: -1px;
             width: 2px;
             height: 2px;
-            background: #000;
+            background: #c0a049;
         }
 
         .rate-table .rate-day td:last-child:after {
@@ -150,7 +152,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: #000;
+            background: #c0a049;
         }
 
         .rate-table .rate-day:before {
@@ -163,27 +165,32 @@
             right: 0;
         }
 
-        .rate-chart .chart-one {
-            background-color: #4779EA;
+        .rate-chart .chart-td0 {
+            background-color: #fdf2b9
         }
 
-        .rate-chart .chart-two {
-            background-color: #3B65DE;
+        .rate-chart .chart-td1 {
+            background-color: #fce275;
         }
 
-        .rate-chart .chart-three {
-            background-color: #264DB8;
+        .rate-chart .chart-td2 {
+            background-color: #fdd253;
         }
 
-        .rate-chart .chart-four {
-            background-color: #2C449E;
+        .rate-chart .chart-td3 {
+            background-color: #fdc539;
+        }
+
+        .rate-chart .chart-td4 {
+            background-color: #feb131;
         }
     </style>
+    <script src='./js/template.js'></script>
 </head>
 
 <body>
-    <div class="rate-box">
-        <p class="rate-txt"><span class="reate-current c-red">6.5</span>&nbsp;&nbsp;%&nbsp;(&nbsp;预计再持有20天,享受历史年利率<span class="reate-history c-red">7.5%</span>&nbsp;)</p>
+    <div class="rate-box" id="rate-box">
+        <!-- <p class="rate-txt"><span class="reate-current c-red">6.5</span>&nbsp;&nbsp;%&nbsp;(&nbsp;预计再持有20天,享受历史年利率<span class="reate-history c-red">7.5%</span>&nbsp;)</p>
         <div class="rate-table clearfix">
             <div class="rate-money fl">
                 <table>
@@ -207,38 +214,38 @@
                             <p>5000</p>
                         </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                         <td>
-                            <p>5000</p>
+                            <p>(持有金额)</p>
                         </td>
-                    </tr> -->
+                    </tr>
                 </table>
             </div>
-            <div class="rate-list fr">
+            <div class="rate-list fl">
                 <table class="rate-chart">
                     <tr>
                         <td>1</td>
                         <td class="chart-one chart-border">1</td>
                         <td class="chart-two chart-border">1</td>
                         <td class="chart-three chart-border">1</td>
-                        <!-- <td class="chart-four chart-border">1</td> -->
+                        <td class="chart-four chart-border">1</td>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td class="chart-one chart-border">1</td>
-                        <td class="chart-two chart-border">1</td>
-                        <td class="chart-three chart-border">1</td>
-                        <!-- <td class="chart-four chart-border">1</td> -->
-                    </tr>
-                    <!-- <tr>
                         <td>1</td>
                         <td class="chart-one chart-border">1</td>
                         <td class="chart-two chart-border">1</td>
                         <td class="chart-three chart-border">1</td>
                         <td class="chart-four chart-border">1</td>
-                    </tr> -->
+                    </tr>
                     <tr>
-                        <td colspan="4">1</td>
+                        <td>1</td>
+                        <td class="chart-one chart-border">1</td>
+                        <td class="chart-two chart-border">1</td>
+                        <td class="chart-three chart-border">1</td>
+                        <td class="chart-four chart-border">1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">1</td>
                     </tr>
                 </table>
                 <table class="rate-day">
@@ -252,9 +259,53 @@
                         <td>
                             <p>1天</p>
                         </td>
-                        <!-- <td>
+                        <td>
                             <p>1天</p>
-                        </td> -->
+                        </td>
+                        <td>
+                            <p>(持有天数)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div> -->
+    </div>
+    <script id="template" type="text/html">
+        <p class="rate-txt"><span class="reate-current c-red">{{minBriskRate}}</span>&nbsp;&nbsp;%&nbsp;(&nbsp;预计再持有20天,享受历史年利率<span class="reate-history c-red">{{maxBriskRate}}%</span>&nbsp;)</p>
+        <div class="rate-table clearfix">
+            <div class="rate-money fl">
+                <table>
+                    {{each briskLineValue}}
+                    <tr>
+                        <td>
+                            <p>{{$value}}</p>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    <tr>
+                        <td>
+                            <p>(持有金额)</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="rate-list fl">
+                <table class="rate-chart">
+                    {{each list as item}}
+                    <tr>
+                        {{each item.briskValue as value index}}
+                        <td class="chart-td{{index}} {{index>0?'chart-border':''}}" colspan="{{item.briskValue.length<briskColumnCount?briskColumnCount:''}}">{{value}}</td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </table>
+                <table class="rate-day">
+                    <tr>
+                        {{each briskColumnValue}}
+                        <td>
+                            <p>{{$value}}</p>
+                        </td>
+                        {{/each}}
                         <td>
                             <p>(持有天数)</p>
                         </td>
@@ -262,8 +313,57 @@
                 </table>
             </div>
         </div>
-    </div>
+    </script>
     <script>
+        var data = {
+            "minBriskRate": "5.50",
+            "maxBriskRate": "8.50",
+            "briskColumnName": "连续持有天数",
+            "briskColumnCount": 5,
+            "briskColumnValue": [
+                "30",
+                "60",
+                "90",
+                "120"
+            ],
+            "briskLineName": "最低持有金额",
+            "briskLineCount": 4,
+            "briskLineValue": [
+                "5000.00",
+                "15000.00",
+                "30000.00",
+                "50000.00"
+            ],
+            "list": [{
+                    "briskColumnValue": "30天",
+                    "briskValue": [
+                        "1", "2", "3", "4", "5"
+                    ]
+                },
+                {
+                    "briskColumnValue": "60天",
+                    "briskValue": [
+                        "1", "2", "3", "4", "5"
+                    ]
+                },
+                {
+                    "briskColumnValue": "90天",
+                    "briskValue": [
+                        "1", "2", "3", "4", "5"
+                    ]
+                },
+                {
+                    "briskColumnValue": "100天",
+                    "briskValue": [
+                        "1"
+                    ]
+                }
+            ]
+        };
+        //模板填坑
+        var html = template('template', data);
+        //插入到指定Dom中
+        document.getElementById('rate-box').innerHTML = html;
     </script>
 </body>
 
