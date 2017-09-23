@@ -1,0 +1,46 @@
+{
+    "isSccuess": true,
+    "minBriskRate": "5.50",
+    "maxBriskRate": "8.50",
+    "briskColumnName": "连续持有天数",
+    "briskColumnCount": 5,
+    "briskColumnValue": [
+        "30",
+        "60",
+        "90",
+        "120"
+    ],
+    "briskLineName": "最低持有金额",
+    "briskLineCount": 4,
+    "briskLineValue": [
+        "5000.00",
+        "15000.00",
+        "30000.00",
+        "50000.00"
+    ],
+    "list": [{
+            "briskColumnValue": "30天",
+            "briskValue": [
+                "1", "2", "3", "4", "5"
+            ]
+        },
+        {
+            "briskColumnValue": "60天",
+            "briskValue": [
+                "1", "2", "3", "4", "5"
+            ]
+        },
+        {
+            "briskColumnValue": "90天",
+            "briskValue": [
+                "1", "2", "3", "4", "5"
+            ]
+        },
+        {
+            "briskColumnValue": "100天",
+            "briskValue": [
+                "1"
+            ]
+        }
+    ]
+}

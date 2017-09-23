@@ -1,0 +1,43 @@
+<!-- 模板文件 -->
+<p class="rate-txt"><span class="reate-current c-red">{{minBriskRate}}</span>&nbsp;&nbsp;%&nbsp;(&nbsp;预计再持有20天,享受历史年利率<span class="reate-history c-red">{{maxBriskRate}}%</span>&nbsp;)</p>
+<div class="rate-table clearfix">
+    <div class="rate-money fl">
+        <table>
+            {{each briskLineValue}}
+            <tr>
+                <td>
+                    <p>{{$value}}</p>
+                </td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td>
+                    <p>(持有金额)</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="rate-list fl">
+        <table class="rate-chart">
+            {{each list item}}
+            <tr>
+                {{each item.briskValue value index}}
+                <td class="chart-td{{index}} {{index>0?'chart-border':''}}" colspan="{{item.briskValue.length<briskColumnCount?briskColumnCount:''}}">{{value}}</td>
+                {{/each}}
+            </tr>
+            {{/each}}
+        </table>
+        <table class="rate-day">
+            <tr>
+                {{each briskColumnValue}}
+                <td>
+                    <p>{{$value}}</p>
+                </td>
+                {{/each}}
+                <td>
+                    <p>(持有天数)</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
